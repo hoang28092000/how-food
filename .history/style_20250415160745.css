@@ -5,10 +5,7 @@
 }
 
 /* show công thức---------------------- */
-body{
-    transition: all .3s ease-in-out;
-    
-}
+
 /* Nền mờ toàn màn hình */
 
 .modal-overlay {
@@ -22,6 +19,7 @@ body{
     justify-content: center;
     align-items: center;
     z-index: 999;
+    transition: all .3s ease-in-out;
 }
 
 /* Khung nội dung ở giữa */
