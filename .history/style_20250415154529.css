@@ -1,0 +1,245 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* show công thức---------------------- */
+
+/* Nền mờ toàn màn hình */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* nền mờ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* Khung nội dung ở giữa */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 70%;
+    max-height: 50%;
+    width: 100%;
+    overflow: scroll; /* thanh cuộn dọc nếu nội dung dài */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+  .modal-content::-webkit-scrollbar {
+    width: 3px;
+    height: 80px; /* Nếu là thanh cuộn ngang */
+
+
+.modal-content::-webkit-scrollbar-thumb {
+    background-color: #F00; /* Màu của thanh cuộn */
+    border-radius: 10px; /* Bo tròn các góc của thanh cuộn */
+}
+.recipe-content {
+    white-space: pre-line;
+  }
+
+/* Nút đóng */
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+}
+.close-modal:hover {
+    color: red;
+}
+
+.show{
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.hidden{
+    display: none;
+}
+.modal-recipe{
+    font-size: 1.8rem;
+}
+.modal-title{
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: #f00;
+    margin-bottom: 16px;
+    text-align: center;
+}
+pre{
+    font-size: 1.8rem;
+    white-space: pre-wrap; /* Giữ định dạng xuống dòng trong nội dung */
+    word-wrap: break-word; /* Tự động xuống dòng nếu từ quá dài */
+    word-break: break-word; /* Ngắt từ nếu cần thiết */
+    line-height: 1.6; /* Tăng khoảng cách giữa các dòng để dễ đọc */
+    overflow-wrap: break-word;
+}
+
+
+
+nav > a{
+    text-decoration: none;
+    color: #333;
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+.container{
+    max-width: calc(100% - 48px);
+    width: 1170px;
+    margin: 0 auto;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+}
+/* header */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+nav .logo{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: 2px;
+}
+nav .search-form{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: flex-end;
+}
+.search-box{
+    width: 300px;
+    height: 40px;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+.btn-search{
+    width: 100px;
+    height: 40px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.2s ease-in-out;
+}
+.btn-search:hover{
+    background-color: #555;
+}
+/* main */
+main{
+    margin-top: 80px;
+}
+.title-page{
+    padding-top: 60px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+
+}
+.list-food{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+.food-item{
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+}
+.food-item:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.food-item img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.info-card{
+    padding: 20px 20px 30px;
+    text-align: center;
+}
+.food-item h3{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+.food-item p{
+    font-size: 1.6rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+.food-item .btn-card{
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+.food-item .btn-card:hover{
+    background-color: #555;
+}
+/* footer */
+footer{
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 60px;
+}
+footer p{
+    font-size: 1.4rem;
+    color: #fff;
+    margin: 0;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .search-box{
+        width: 80%;
+    }
+    .btn-search{
+        width: 20%;
+    }
+    .list-food{
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}

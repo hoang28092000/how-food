@@ -1,0 +1,40 @@
+const searchForm = document.querySelector(".search-form");
+const searchInput = document.querySelector(".search-box");
+const searchButton = document.querySelector(".btn-search");
+const foodItems = document.querySelectorAll(".food-item");
+
+const message = document.createElement("p");
+message.textContent = "Không tìm thấy công thức nào!";
+message.style.color = "red";
+message.style.fontSize = "20px";
+message.style.display = "none";
+message.style.textAlign = "center";
+document.querySelector("main").appendChild(message); // Gắn vào main cho hợp lý
+
+searchButton.addEventListener("click", (e) => {
+    e.preventDefault(); // Chặn reload khi bấm Search
+
+    const query = searchInput.value.trim().toLowerCase();
+    let foundAny = false;
+
+    for (let item of foodItems) {
+        const name = item.querySelector(".food-name").textContent.toLowerCase();
+        if (name.includes(query)) {
+            item.style.display = "block";
+            foundAny = true;
+        } else {
+            item.style.display = "none";
+        }
+    }
+
+    message.style.display = foundAny ? "none" : "block";
+});
+
+
+
+// Xem công thức chi tiết
+// lay tat ca cac nut xem cong thuc
+const viewButtons = document.querySelectorAll(".btn-card");
+
+// 
+
